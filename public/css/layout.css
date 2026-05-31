@@ -197,8 +197,7 @@ footer {
 }
 
 /* ========================================================================== */
-   Estilos Responsivos Premium y Menú Hamburguesa Móvil (Glassmorphism)
-   ========================================================================== */
+Estilos Responsivos Premium y Menú Hamburguesa Móvil (Glassmorphism)==========================================================================*/
 
 /* Botón Hamburguesa (Oculto por defecto en escritorio) */
 .mobile-nav-toggle {
@@ -225,7 +224,8 @@ footer {
 /* Transiciones animadas simétricas para formar la X */
 .mobile-nav-toggle.active span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
-    background-color: #ffffff !important; /* Fuerza color blanco para el menú oscuro */
+    background-color: #ffffff !important;
+    /* Fuerza color blanco para el menú oscuro */
 }
 
 .mobile-nav-toggle.active span:nth-child(2) {
@@ -234,14 +234,16 @@ footer {
 
 .mobile-nav-toggle.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
-    background-color: #ffffff !important; /* Fuerza color blanco para el menú oscuro */
+    background-color: #ffffff !important;
+    /* Fuerza color blanco para el menú oscuro */
 }
 
 /* Media Queries para Tablets y Smartphones */
 @media (max-width: 768px) {
+
     /* Mostrar y alinear botón hamburguesa perfectamente a la extrema derecha */
     .mobile-nav-toggle {
-        display: flex;
+        display: flex !important;
         position: absolute;
         right: 24px;
         top: 50%;
@@ -255,7 +257,8 @@ footer {
 
     .header-container {
         height: 70px;
-        position: relative; /* Para el posicionamiento absoluto del toggle */
+        position: relative;
+        /* Para el posicionamiento absoluto del toggle */
     }
 
     /* Ocultar saludo de usuario y separar el carrito del toggle en móvil */
@@ -264,7 +267,8 @@ footer {
     }
 
     .header-actions {
-        margin-right: 48px; /* Espacio para que el carrito no se encime con la hamburguesa */
+        margin-right: 48px;
+        /* Espacio para que el carrito no se encime con la hamburguesa */
     }
 
     /* Menú móvil superpuesto translúcido de lujo (Glassmorphism) */
@@ -274,10 +278,13 @@ footer {
         right: 0;
         width: 280px;
         height: 100vh;
-        background: rgba(10, 10, 10, 0.95); /* Fondo oscuro de gran contraste */
-        backdrop-filter: blur(20px); /* Vidrio esmerilado premium */
+        background: rgba(10, 10, 10, 0.95);
+        /* Fondo oscuro de gran contraste */
+        backdrop-filter: blur(20px);
+        /* Vidrio esmerilado premium */
         -webkit-backdrop-filter: blur(20px);
-        border-left: 1px solid rgba(186, 154, 88, 0.3); /* Borde dorado translúcido */
+        border-left: 1px solid rgba(186, 154, 88, 0.3);
+        /* Borde dorado translúcido */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -304,14 +311,16 @@ footer {
         padding: 12px 0;
         font-size: 16px;
         letter-spacing: 3px;
-        color: #ffffff !important; /* Letras blancas de gran legibilidad sobre fondo oscuro */
+        color: #ffffff !important;
+        /* Letras blancas de gran legibilidad sobre fondo oscuro */
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         transition: color 0.3s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-        color: var(--color-primary-container) !important; /* Acento dorado */
+        color: var(--color-primary-container) !important;
+        /* Acento dorado */
     }
 
     /* Hero Section responsivo */
@@ -338,11 +347,11 @@ footer {
     /* ==========================================================================
        Conversión de Tablas a Tarjetas Responsivas (Premium)
        ========================================================================== */
-    .responsive-table, 
-    .responsive-table thead, 
-    .responsive-table tbody, 
-    .responsive-table th, 
-    .responsive-table td, 
+    .responsive-table,
+    .responsive-table thead,
+    .responsive-table tbody,
+    .responsive-table th,
+    .responsive-table td,
     .responsive-table tr {
         display: block;
         width: 100%;
@@ -360,7 +369,7 @@ footer {
         background-color: var(--color-surface);
         padding: 20px;
         margin-bottom: 24px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         position: relative;
     }
 
@@ -397,7 +406,8 @@ footer {
         text-transform: uppercase;
         font-size: 11px;
         letter-spacing: 1px;
-        color: var(--color-primary-container); /* Color dorado/primario */
+        color: var(--color-primary-container);
+        /* Color dorado/primario */
     }
 
     /* Ajustes específicos para imágenes en tabla administrativa */
@@ -406,7 +416,7 @@ footer {
     }
 
     /* Ajustes específicos para botones en tabla de catálogo */
-    .responsive-table td[data-label="Acciones"], 
+    .responsive-table td[data-label="Acciones"],
     .responsive-table td[data-label="Estado"],
     .responsive-table td[data-label="Acción"] {
         justify-content: flex-end;
@@ -435,11 +445,11 @@ footer {
         text-align: center;
         gap: 24px;
     }
-    
+
     .cart-notes {
         max-width: 100%;
     }
-    
+
     .cart-summary {
         text-align: center;
         width: 100%;
