@@ -8,7 +8,7 @@
 
     <!-- Product Table -->
     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: 32px; margin-bottom: 48px;">
-        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <table class="responsive-table" style="width: 100%; border-collapse: collapse; text-align: left;">
             <thead>
                 <tr style="border-bottom: 1px solid var(--color-border); text-transform: uppercase; font-size: 11px; letter-spacing: 1px; color: var(--color-text-secondary);">
                     <th style="padding-bottom: 16px;">Imagen</th>
@@ -39,7 +39,7 @@
                                     <?= $p['stock'] ?>
                                 </span>
                             </td>
-                            <td style="padding: 16px 0; text-align: center; display: flex; gap: 12px; justify-content: center; height: 82px; align-items: center;" data-label="Acciones">
+                            <td class="admin-actions-cell" data-label="Acciones">
                                 <button class="btn-secondary" style="padding: 6px 12px; font-size: 11px;" onclick='showEditForm(<?= json_encode($p) ?>)'>Editar</button>
                                 <button class="btn-primary" style="padding: 6px 12px; font-size: 11px; background-color: var(--color-error); border-color: var(--color-error);" onclick="deleteProduct(<?= $p['id_producto'] ?>)">Eliminar</button>
                             </td>

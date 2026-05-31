@@ -5,7 +5,7 @@
     
     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: 32px;">
         <?php if (!empty($cart['items'])): ?>
-            <table style="width: 100%; border-collapse: collapse; text-align: left; margin-bottom: 32px;">
+            <table class="responsive-table" style="width: 100%; border-collapse: collapse; text-align: left; margin-bottom: 32px;">
                 <thead>
                     <tr style="border-bottom: 1px solid var(--color-border); text-transform: uppercase; font-size: 11px; letter-spacing: 1px; color: var(--color-text-secondary);">
                         <th style="padding-bottom: 16px;">Producto</th>
@@ -22,7 +22,8 @@
                         $subtotal = $item['precio'] * $item['cantidad'];
                         $grand_total += $subtotal;
                     ?>
-                            <td style="padding: 16px 0; display: flex; align-items: center; gap: 16px;">
+                        <tr style="border-bottom: 1px solid var(--color-surface-dim);">
+                            <td data-label="Producto" style="padding: 16px 0; display: flex; align-items: center; gap: 16px;">
                                 <?php
                                 $imgSrc = $item['imagen_url'];
                                 if (!filter_var($imgSrc, FILTER_VALIDATE_URL)) {
@@ -32,12 +33,12 @@
                                 <img src="<?= esc($imgSrc) ?>" alt="<?= esc($item['nombre_producto']) ?>" style="width: 60px; height: 60px; object-fit: cover; border: 1px solid var(--color-border);" onerror="this.src='https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=400';">
                                 <span style="font-weight: 700;"><?= esc($item['nombre_producto']) ?></span>
                             </td>
-                            <td style="padding: 16px 0;">$<?= number_format($item['precio'], 2) ?></td>
-                            <td style="padding: 16px 0; text-align: center;">
+                            <td data-label="Precio" style="padding: 16px 0;">$<?= number_format($item['precio'], 2) ?></td>
+                            <td data-label="Cantidad" style="padding: 16px 0; text-align: center;">
                                 <input type="number" value="<?= $item['cantidad'] ?>" min="1" style="width: 60px; padding: 6px; border: 1px solid var(--color-border); text-align: center;" onchange="updateQuantity(<?= $item['id_producto'] ?>, this.value)">
                             </td>
-                            <td style="padding: 16px 0; text-align: right; font-weight: 700;">$<?= number_format($subtotal, 2) ?></td>
-                            <td style="padding: 16px 0; text-align: center;">
+                            <td data-label="Total" style="padding: 16px 0; text-align: right; font-weight: 700;">$<?= number_format($subtotal, 2) ?></td>
+                            <td data-label="Acción" style="padding: 16px 0; text-align: center;">
                                 <button type="button" style="color: var(--color-error); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;" onclick="removeFromCart(<?= $item['id_producto'] ?>)">Eliminar</button>
                             </td>
                         </tr>
@@ -45,13 +46,13 @@
                 </tbody>
             </table>
             
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; border-top: 1px solid var(--color-border); padding-top: 32px;">
-                <div style="max-width: 400px;">
+            <div class="cart-footer">
+                <div class="cart-notes">
                     <p style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.6;">
                         * El inventario de los productos en tu carrito está sujeto a disponibilidad y confirmación inmediata en bodega al momento de procesar la orden.
                     </p>
                 </div>
-                <div style="text-align: right;">
+                <div class="cart-summary">
                     <p style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--color-text-secondary); margin-bottom: 8px;">Total del Pedido</p>
                     <p style="font-size: 32px; font-family: var(--font-headline); color: var(--color-primary); margin-bottom: 24px;">$<?= number_format($grand_total, 2) ?></p>
                     

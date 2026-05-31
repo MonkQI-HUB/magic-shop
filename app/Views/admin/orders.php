@@ -5,7 +5,7 @@
 
     <!-- Orders Table -->
     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: 32px;">
-        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <table class="responsive-table" style="width: 100%; border-collapse: collapse; text-align: left;">
             <thead>
                 <tr style="border-bottom: 1px solid var(--color-border); text-transform: uppercase; font-size: 11px; letter-spacing: 1px; color: var(--color-text-secondary);">
                     <th style="padding-bottom: 16px;">ID Pedido</th>

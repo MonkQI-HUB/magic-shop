@@ -170,7 +170,33 @@ footer {
     color: var(--color-on-secondary);
 }
 
-/* ==========================================================================
+.admin-actions-cell {
+    padding: 16px 0;
+    text-align: center;
+    display: flex !important;
+    gap: 12px;
+    justify-content: center;
+    height: 82px;
+    align-items: center;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid var(--color-border);
+    padding-top: 32px;
+}
+
+.cart-notes {
+    max-width: 400px;
+}
+
+.cart-summary {
+    text-align: right;
+}
+
+/* ========================================================================== */
    Estilos Responsivos Premium y Menú Hamburguesa Móvil (Glassmorphism)
    ========================================================================== */
 
@@ -312,19 +338,24 @@ footer {
     /* ==========================================================================
        Conversión de Tablas a Tarjetas Responsivas (Premium)
        ========================================================================== */
-    table, thead, tbody, th, td, tr {
+    .responsive-table, 
+    .responsive-table thead, 
+    .responsive-table tbody, 
+    .responsive-table th, 
+    .responsive-table td, 
+    .responsive-table tr {
         display: block;
         width: 100%;
     }
 
     /* Ocultar cabeceras en móviles */
-    thead tr {
+    .responsive-table thead tr {
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
 
-    tbody tr {
+    .responsive-table tbody tr {
         border: 1px solid var(--color-border) !important;
         background-color: var(--color-surface);
         padding: 20px;
@@ -333,12 +364,12 @@ footer {
         position: relative;
     }
 
-    tbody tr:last-child {
+    .responsive-table tbody tr:last-child {
         margin-bottom: 0;
     }
 
     /* Alinear celdas como filas de tarjeta */
-    td {
+    .responsive-table td {
         border: none !important;
         position: relative;
         padding: 12px 0 !important;
@@ -350,13 +381,13 @@ footer {
         border-bottom: 1px solid var(--color-surface-dim) !important;
     }
 
-    td:last-child {
+    .responsive-table td:last-child {
         border-bottom: none !important;
         padding-top: 16px !important;
     }
 
     /* Inyectar data-label como cabecera móvil a la izquierda */
-    td::before {
+    .responsive-table td::before {
         content: attr(data-label);
         position: absolute;
         left: 0;
@@ -370,19 +401,50 @@ footer {
     }
 
     /* Ajustes específicos para imágenes en tabla administrativa */
-    td[data-label="Imagen"] {
+    .responsive-table td[data-label="Imagen"] {
         justify-content: flex-end;
     }
 
     /* Ajustes específicos para botones en tabla de catálogo */
-    td[data-label="Acciones"], td[data-label="Estado"] {
+    .responsive-table td[data-label="Acciones"], 
+    .responsive-table td[data-label="Estado"],
+    .responsive-table td[data-label="Acción"] {
         justify-content: flex-end;
         gap: 12px;
     }
 
+    /* Ajuste responsivo para celda de acciones en admin */
+    .responsive-table td.admin-actions-cell {
+        display: flex !important;
+        justify-content: flex-end !important;
+        height: auto !important;
+        padding-left: 45% !important;
+        align-items: center;
+    }
+
     /* Ajuste para el formulario de actualización de estado de pedido */
-    td[data-label="Estado"] form {
+    .responsive-table td[data-label="Estado"] form {
         width: 100%;
         text-align: right;
+    }
+
+    /* Footer del carrito en móvil */
+    .cart-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+    
+    .cart-notes {
+        max-width: 100%;
+    }
+    
+    .cart-summary {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
