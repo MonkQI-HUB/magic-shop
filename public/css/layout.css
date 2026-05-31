@@ -197,7 +197,7 @@ footer {
 }
 
 /* ========================================================================== */
-Estilos Responsivos Premium y Menú Hamburguesa Móvil (Glassmorphism)==========================================================================*/
+/* Estilos Responsivos Premium y Menú Hamburguesa Móvil (Glassmorphism) ========================================================================== */
 
 /* Botón Hamburguesa (Oculto por defecto en escritorio) */
 .mobile-nav-toggle {
@@ -207,23 +207,36 @@ Estilos Responsivos Premium y Menú Hamburguesa Móvil (Glassmorphism)==========
     cursor: pointer;
     padding: 6px;
     z-index: 1010;
-    flex-direction: column;
-    justify-content: space-between;
     width: 30px;
     height: 20px;
+    position: relative;
 }
 
 .mobile-nav-toggle span {
     display: block;
-    width: 100%;
+    position: absolute;
     height: 2px;
+    width: 100%;
     background-color: var(--color-text-primary);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    left: 0;
+}
+
+.mobile-nav-toggle span:nth-child(1) {
+    top: 2px;
+}
+
+.mobile-nav-toggle span:nth-child(2) {
+    top: 9px;
+}
+
+.mobile-nav-toggle span:nth-child(3) {
+    top: 16px;
 }
 
 /* Transiciones animadas simétricas para formar la X */
 .mobile-nav-toggle.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(7px) rotate(45deg);
     background-color: #ffffff !important;
     /* Fuerza color blanco para el menú oscuro */
 }
@@ -233,7 +246,7 @@ Estilos Responsivos Premium y Menú Hamburguesa Móvil (Glassmorphism)==========
 }
 
 .mobile-nav-toggle.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-7px) rotate(-45deg);
     background-color: #ffffff !important;
     /* Fuerza color blanco para el menú oscuro */
 }
@@ -243,7 +256,7 @@ Estilos Responsivos Premium y Menú Hamburguesa Móvil (Glassmorphism)==========
 
     /* Mostrar y alinear botón hamburguesa perfectamente a la extrema derecha */
     .mobile-nav-toggle {
-        display: flex !important;
+        display: block !important;
         position: absolute;
         right: 24px;
         top: 50%;
