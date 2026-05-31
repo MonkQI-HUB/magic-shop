@@ -124,3 +124,16 @@ _modules/*
 
 /results/
 /phpunit.xml
+
+#-------------------------
+# Agentic Coding & Specs (Spec Kit)
+#-------------------------
+.agents/
+.specify/
+specs/
+
+#-------------------------
+# Local Uploads
+#-------------------------
+public/uploads/productos/*
+!public/uploads/productos/.gitkeep

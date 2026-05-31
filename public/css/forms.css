@@ -1,0 +1,91 @@
+/* Magic Shop Cosmetics - forms.css */
+
+.form-container {
+    max-width: 500px;
+    margin: 80px auto;
+    background-color: var(--color-surface);
+    padding: 48px;
+    border: 1px solid var(--color-border);
+}
+
+.form-title {
+    font-size: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-text-secondary);
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--color-primary-container);
+}
+
+/* Validation styling */
+.form-input.invalid {
+    border-color: var(--color-error);
+}
+
+.form-error-msg {
+    color: var(--color-error);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.form-action {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-link {
+    font-size: 13px;
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
+.form-link a {
+    color: var(--color-primary-container);
+    font-weight: 700;
+}
+
+.form-link a:hover {
+    text-decoration: underline;
+}
+
+/* Adaptación de Formularios para Móviles */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 32px 24px;
+        margin: 40px auto;
+        border: none; /* Ocupa el ancho nativo cómodamente en móviles */
+    }
+    
+    .form-title {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+}

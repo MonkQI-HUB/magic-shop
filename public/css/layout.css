@@ -1,0 +1,388 @@
+/* Magic Shop Cosmetics - layout.css */
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-family: var(--font-headline);
+    font-size: 28px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-primary-container);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 20px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary);
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--color-surface-dim);
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 24px;
+}
+
+.hero-title {
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+/* Footer Section */
+footer {
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+    padding: 80px 0 40px;
+    margin-top: 120px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-title {
+    font-family: var(--font-headline);
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--color-primary-container);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+/* Utility buttons with strict sharp corners */
+.btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+    padding: 12px 32px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    border: 1px solid var(--color-secondary);
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-container);
+    border-color: var(--color-primary-container);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    padding: 12px 32px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    border: 1px solid var(--color-text-primary);
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+}
+
+/* ==========================================================================
+   Estilos Responsivos Premium y Menú Hamburguesa Móvil (Glassmorphism)
+   ========================================================================== */
+
+/* Botón Hamburguesa (Oculto por defecto en escritorio) */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 1010;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+.mobile-nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text-primary);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Transiciones animadas simétricas para formar la X */
+.mobile-nav-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: #ffffff !important; /* Fuerza color blanco para el menú oscuro */
+}
+
+.mobile-nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: #ffffff !important; /* Fuerza color blanco para el menú oscuro */
+}
+
+/* Media Queries para Tablets y Smartphones */
+@media (max-width: 768px) {
+    /* Mostrar y alinear botón hamburguesa perfectamente a la extrema derecha */
+    .mobile-nav-toggle {
+        display: flex;
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* Redimensionar logo y centrar verticalmente */
+    .logo {
+        font-size: 22px;
+    }
+
+    .header-container {
+        height: 70px;
+        position: relative; /* Para el posicionamiento absoluto del toggle */
+    }
+
+    /* Ocultar saludo de usuario y separar el carrito del toggle en móvil */
+    .user-greeting {
+        display: none !important;
+    }
+
+    .header-actions {
+        margin-right: 48px; /* Espacio para que el carrito no se encime con la hamburguesa */
+    }
+
+    /* Menú móvil superpuesto translúcido de lujo (Glassmorphism) */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.95); /* Fondo oscuro de gran contraste */
+        backdrop-filter: blur(20px); /* Vidrio esmerilado premium */
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(186, 154, 88, 0.3); /* Borde dorado translúcido */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        padding: 40px;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Mostrar menú móvil activo */
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 16px;
+        letter-spacing: 3px;
+        color: #ffffff !important; /* Letras blancas de gran legibilidad sobre fondo oscuro */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--color-primary-container) !important; /* Acento dorado */
+    }
+
+    /* Hero Section responsivo */
+    .hero {
+        height: 45vh;
+        margin-bottom: 40px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    /* Footer responsivo */
+    footer {
+        padding: 60px 0 30px;
+        margin-top: 80px;
+    }
+
+    .footer-container {
+        gap: 32px;
+        text-align: center;
+    }
+
+    /* ==========================================================================
+       Conversión de Tablas a Tarjetas Responsivas (Premium)
+       ========================================================================== */
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    /* Ocultar cabeceras en móviles */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tbody tr {
+        border: 1px solid var(--color-border) !important;
+        background-color: var(--color-surface);
+        padding: 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    tbody tr:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Alinear celdas como filas de tarjeta */
+    td {
+        border: none !important;
+        position: relative;
+        padding: 12px 0 !important;
+        padding-left: 45% !important;
+        text-align: right !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--color-surface-dim) !important;
+    }
+
+    td:last-child {
+        border-bottom: none !important;
+        padding-top: 16px !important;
+    }
+
+    /* Inyectar data-label como cabecera móvil a la izquierda */
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 40%;
+        text-align: left;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: var(--color-primary-container); /* Color dorado/primario */
+    }
+
+    /* Ajustes específicos para imágenes en tabla administrativa */
+    td[data-label="Imagen"] {
+        justify-content: flex-end;
+    }
+
+    /* Ajustes específicos para botones en tabla de catálogo */
+    td[data-label="Acciones"], td[data-label="Estado"] {
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    /* Ajuste para el formulario de actualización de estado de pedido */
+    td[data-label="Estado"] form {
+        width: 100%;
+        text-align: right;
+    }
+}

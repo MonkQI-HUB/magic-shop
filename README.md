@@ -1,69 +1,95 @@
-# CodeIgniter 4 Application Starter
+# Magic Shop Cosmetics 🌟
 
-## What is CodeIgniter?
+**Magic Shop Cosmetics** es una plataforma web premium de comercio electrónico especializada en la venta de cosméticos de alta eficacia y cuidado personal de lujo. Con un enfoque estético editorial y una arquitectura interactiva modular, ofrece una experiencia de usuario deslumbrante tanto para clientes en el catálogo público como para administradores en el panel de control.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 🚀 Características Clave
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+### 💎 Diseño Premium de Vanguardia
+* **Estética Luxury:** Paleta cromática en negro, blanco y acentos dorados que evocan exclusividad y elegancia.
+* **Experiencia de Usuario (UX/UI):** Diseñado inicialmente en **Google Stitch** y convertido a código pixel-perfect con micro-animaciones en tarjetas, botones y modales.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+### 📱 Experiencia Móvil de Primer Nivel
+* **Menú Hamburguesa Glassmorphic:** Menú interactivo flotante en móviles con efecto de vidrio esmerilado (`backdrop-filter: blur(20px);`), fondo translúcido y sutiles bordes dorados.
+* **Tablas en Tarjetas Responsivas:** La gestión de catálogo y pedidos en el panel de administración se reorganiza dinámicamente en tarjetas responsivas y legibles en cualquier smartphone.
 
-## Installation & updates
+### ⚙️ Funcionalidades del E-commerce
+* **Gestor de Catálogo Físico:** Los administradores pueden añadir y editar cosméticos subiendo imágenes directamente desde su computadora a la carpeta pública del servidor, con eliminación inteligente de archivos obsoletos para no malgastar espacio en disco.
+* **Control de Pedidos Interactivo:** Consulta y modificación del estado de despachos en tiempo real mediante solicitudes asíncronas seguras (Fetch/AJAX) y alertas estéticas con **SweetAlert2**.
+* **Persistencia en la Nube:** Configurado con persistencia a base de datos de producción externa en **Railway** mediante un resolvedor robusto de URLs absolutas que es compatible con cualquier subdirectorio local en XAMPP.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+---
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+## 🛠️ Stack Tecnológico
 
-## Setup
+* **Backend:** PHP 8.x / CodeIgniter 4 (Framework MVC robusto).
+* **Base de Datos:** MySQL / MariaDB (Alojada en **Railway**).
+* **Frontend:** HTML5 semántico, CSS3 modular (5 hojas de estilo independientes), JavaScript (ES6+).
+* **Alertas e Interacciones:** SweetAlert2.
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+---
 
-## Important Change with index.php
+## 📁 Estructura de Hojas de Estilo CSS
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+El sistema cuenta con un diseño modular e independiente organizado en `public/css/`:
+1. **`global.css`:** Contiene la definición de variables CSS, tokens de diseño y la paleta de colores corporativos negro/dorado.
+2. **`layout.css`:** Define la estructura de componentes globales, header responsivo con hamburguesa, tarjetas del dashboard y comportamiento de tablas-tarjetas responsivas.
+3. **`forms.css`:** Estilos para inputs, validaciones, leyendas de ayuda y adaptabilidad responsiva de los formularios de registro y checkout.
+4. **`catalog.css`:** Animaciones, transformaciones y grids flexibles para el catálogo público y tarjetas de productos.
+5. **`alerts.css`:** Ajustes y personalizaciones exclusivas de integración visual con SweetAlert2.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+---
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## 💻 Instalación y Configuración Local
 
-## Repository Management
+### Requisitos Previos
+* PHP 8.2 o superior (con extensiones `intl`, `mbstring`, `mysqli` y `mysqlnd` habilitadas en tu `php.ini`).
+* Apache (XAMPP / WampServer).
+* Composer instalado.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+### Pasos de Configuración
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+1. **Clonar e Inicializar el Proyecto**:
+   Coloca el proyecto en tu directorio de servidor web (ej. `d:/xammp/htdocs/magic-shop/`).
+   ```bash
+   composer install
+   ```
 
-## Server Requirements
+2. **Configurar el Archivo de Entorno (`.env`)**:
+   El proyecto ya viene configurado para enlazarse con la base de datos MySQL en producción en **Railway**. Si deseas editar las credenciales, edita tu archivo [.env](file:///d:/xammp/htdocs/magic-shop/.env):
+   ```ini
+   database.default.hostname = zephyr.proxy.rlwy.net
+   database.default.database = railway
+   database.default.username = root
+   database.default.password = YekotZfGRrjNeTRGNBSRkSKOtldjxYrP
+   database.default.DBDriver = MySQLi
+   database.default.port = 40101
+   ```
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+3. **Ejecutar en tu Servidor Local**:
+   Asegúrate de que Apache esté corriendo en XAMPP. Accede desde tu navegador web a la dirección del subdirectorio:
+   `http://localhost/magic-shop/public/`
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+---
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+## 🛡️ Estructura del Repositorio de Git
+Hemos optimizado el archivo [.gitignore](file:///d:/xammp/htdocs/magic-shop/.gitignore) para que mantengas tu repositorio limpio de archivos de desarrollo e infraestructura irrelevante. Quedan excluidos:
+* El directorio `/vendor` de dependencias de Composer.
+* La variable de configuración local `.env`.
+* Las carpetas y archivos internos del editor (`.vscode/`, `.idea/`).
+* Archivos temporales del motor Spec Kit (`.agents/`, `.specify/`, `specs/`).
+* Fotos de prueba cargadas físicamente por administradores localmente (`public/uploads/productos/*`).
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+---
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## 👥 Roles de Usuario por Defecto (Base de Datos)
+
+El sistema cuenta con un sistema de autenticación seguro encriptado con **Bcrypt** (`password_hash`):
+
+1. **Administrador**:
+   * **Correo:** `admin@test.com`
+   * **Contraseña:** `admin` (Hasheada de forma segura para permitir acceso directo al Dashboard).
+2. **Cliente**:
+   * **Correo:** `juan@test.com`
+   * **Contraseña:** `12345678` (Usa este usuario para simular compras rápidas en el carrito de compras).
